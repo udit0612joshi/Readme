@@ -9,7 +9,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Installing
 
-End with an example of getting some data out of the system or using it for a little demo
 
 ### To build the image for dbr presto
 ```
@@ -31,8 +30,9 @@ docker exec -it presto bash
 ## Examples
 
 ### Execute sql on presto using ODBC driver
-isql PRESTODS
+
 ```
+isql PRESTODS
 select * from accounts
 ```
 ### Execute sql on presto using JDBC driver
@@ -50,26 +50,29 @@ select * from accounts
 This will show  how to run the automated tests for this system
 
 
-###To run postgresql_connector group use the mentioned command 
+Running Presto with postgres 
 
 ```
 presto-product-tests/bin/run.sh singlenode -g postgresql_connector --conf presto-product-tests/target/classes/tempto-configuration.yaml
 
 ```
 
-
-
-###Running Presto with Hive
+Running Presto with Hive
 
 ```
 presto-product-tests/bin/run.sh singlenode -g hive_coercion,hive_connector,post_hive_1_0_1,basic_sql -x authorization,profile_specific_tests --conf presto-product-tests/target/classes/tempto-configuration.yaml
 
 ```
 
+Running Presto with Cassandra
+```
+./bin/run.sh singlenode -g cassandra --conf target/classes/tempto-configuration.yaml
+```
+
 ## Deployment
-
+```
 ./gradlew composeUp
-
+```
 
 ## Contributing
 
