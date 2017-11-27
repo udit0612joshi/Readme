@@ -1,7 +1,7 @@
 
-# Manhattan Zeppelin
+# Manhattan Postgressql
 
-Apache Zeppelin is a web-based notebook that enables interactive data analytics. With Zeppelin, you can make beautiful data-driven, interactive and collaborative documents with a rich set of pre-built language backends (or interpreters) . It can be used for data ingestion, discovery, analytics, and visualizations using notebooks
+PostgreSQL (pronounced as post-gress-Q-L) is an open source relational database management system (DBMS) developed by a worldwide team of volunteers. 
 
 ## Getting Started
 
@@ -21,6 +21,12 @@ These instructions will get you a copy of the project up and running on your loc
 ./gradlew composeUp
 ```
 
+## Connection with psql
+```
+ psql -h localhost -U dbr -p 5432 -d dbrdb
+
+```
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/dbresearchinc/manhattan.git) for details on our code of conduct, and the process for submitting pull requests to us.
@@ -28,9 +34,9 @@ Please read [CONTRIBUTING.md](https://github.com/dbresearchinc/manhattan.git) fo
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md]  file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/dbresearchinc/manhattan/blob/master/manhattan_dev/LICENSE)  file for details
 
 ## Acknowledgments
 
-https://zeppelin.apache.org/
+https://www.postgresql.org/docs/
 
