@@ -12,49 +12,54 @@ These instructions will get you a copy of the project up and running on your loc
 End with an example of getting some data out of the system or using it for a little demo
 
 ### To build the image for dbr presto
+```
 docker build -t dbr/presto .
-
+```
 ### To push the image to docker hub
+```
 docker push dbr/presto:v1
-
+```
 ### To run the container that accepts connection from outside
+```
 docker run -p 8443:8443 --name presto -d dbr/presto --link postgres
+```
 
 ### To login into container
+```
 docker exec -it presto bash
-
-
+```
 ## Examples
+
 ### Execute sql on presto using ODBC driver
 isql PRESTODS
+```
 select * from accounts
-
+```
 ### Execute sql on presto using JDBC driver
-
+```
 /opt/teradata/presto_clients/presto --server localhost:9090 --catalog postgresql --schema public --execute 'SHOW SCHEMAS FROM postgresql;'
-
+```
 ### Execute sql on presto using ODBC driver on ssl
-
+```
 isql PRESTODSSSL
 select * from accounts
-
+```
 
 ## Running the tests
 
 This will show  how to run the automated tests for this system
 
-### Break down into end to end tests
 
-To run postgresql_connector group use the mentioned command 
+###To run postgresql_connector group use the mentioned command 
 
 ```
 presto-product-tests/bin/run.sh singlenode -g postgresql_connector --conf presto-product-tests/target/classes/tempto-configuration.yaml
 
 ```
 
-### And coding style tests
 
-Running Presto with Hive
+
+###Running Presto with Hive
 
 ```
 presto-product-tests/bin/run.sh singlenode -g hive_coercion,hive_connector,post_hive_1_0_1,basic_sql -x authorization,profile_specific_tests --conf presto-product-tests/target/classes/tempto-configuration.yaml
