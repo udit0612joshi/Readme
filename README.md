@@ -1,6 +1,7 @@
-# Manhattan Presto
 
-Presto is an open source distributed SQL query engine for running interactive analytic queries against data sources of all sizes ranging from gigabytes to petabytes.Presto allows querying data where it lives, including Hive, Cassandra, relational databases or even proprietary data stores. A single Presto query can combine data from multiple sources, allowing for analytics across your entire organization.
+# Manhattan Zeppelin
+
+Apache Zeppelin is a web-based notebook that enables interactive data analytics. With Zeppelin, you can make beautiful data-driven, interactive and collaborative documents with a rich set of pre-built language backends (or interpreters) . It can be used for data ingestion, discovery, analytics, and visualizations using notebooks
 
 ## Getting Started
 
@@ -9,65 +10,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Installing
 
-
 ### To build the image for dbr presto
 ```
-docker build -t dbr/presto .
-```
-### To push the image to docker hub
-```
-docker push dbr/presto:v1
-```
-### To run the container that accepts connection from outside
-```
-docker run -p 8443:8443 --name presto -d dbr/presto --link postgres
+ ../gradlew build
 ```
 
-### To login into container
-```
-docker exec -it presto bash
-```
-## Examples
-
-### Execute sql on presto using ODBC driver
-
-```
-isql PRESTODS
-select * from accounts
-```
-### Execute sql on presto using JDBC driver
-```
-/opt/teradata/presto_clients/presto --server localhost:9090 --catalog postgresql --schema public --execute 'SHOW SCHEMAS FROM postgresql;'
-```
-### Execute sql on presto using ODBC driver on ssl
-```
-isql PRESTODSSSL
-select * from accounts
-```
-
-## Running the tests
-
-This will show  how to run the automated tests for this system
-
-
-Running Presto with postgres 
-
-```
-presto-product-tests/bin/run.sh singlenode -g postgresql_connector --conf presto-product-tests/target/classes/tempto-configuration.yaml
-
-```
-
-Running Presto with Hive
-
-```
-presto-product-tests/bin/run.sh singlenode -g hive_coercion,hive_connector,post_hive_1_0_1,basic_sql -x authorization,profile_specific_tests --conf presto-product-tests/target/classes/tempto-configuration.yaml
-
-```
-
-Running Presto with Cassandra
-```
-./bin/run.sh singlenode -g cassandra --conf target/classes/tempto-configuration.yaml
-```
 
 ## Deployment
 ```
@@ -85,4 +32,5 @@ This project is licensed under the MIT License - see the [LICENSE.md]  file for 
 
 ## Acknowledgments
 
-https://prestodb.io/
+https://zeppelin.apache.org/
+
