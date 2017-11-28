@@ -1,30 +1,44 @@
 
-# Manhattan Postgressql
+# Manhattan 
 
-PostgreSQL (pronounced as post-gress-Q-L) is an open source relational database management system (DBMS) developed by a worldwide team of volunteers. 
+## The Manhattan Project that will create the Graphite Reactor Platform by DB Research Inc.
+
+Manhattan is an Actuarial data science platform , which keeps the track of the users data and run analysis on it . It provides docker containerised  platform for data federation ,visualisation and data asset .
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 
-## Installing
+## Installation
 
-### To build the image for dbr presto
+### Download manhattan repostitory
 ```
- ../gradlew build
-```
-
-
-## Deployment
-```
-./gradlew composeUp
+ wget http://192.168.1.23:8080/112317/dbresearchinc.repo
+ 
 ```
 
-## Connection with psql
+## Search RPM
 ```
- psql -h localhost -U dbr -p 5432 -d dbrdb
+yum search manhattan 
+or 
+yum search dbresearchinc
+```
 
+## Install RPM
+```
+yum install -y manhattan.x86_64
+```
+
+## Setup your project
+```
+cd /opt/manhattan/current/scripts/setup.py
+```
+## Run  your project
+Open your browser 
+
+``` 
+https://machine-ip
 ```
 
 ## Contributing
@@ -34,9 +48,8 @@ Please read [CONTRIBUTING.md](https://github.com/dbresearchinc/manhattan.git) fo
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/dbresearchinc/manhattan/blob/master/manhattan_dev/LICENSE)  file for details
+This project is licensed under the Apache  License - see the [LICENSE.md](https://github.com/dbresearchinc/manhattan/blob/master/manhattan_dev/LICENSE)  file for details
 
 ## Acknowledgments
 
-https://www.postgresql.org/docs/
-
+https://dbresearch.co/
