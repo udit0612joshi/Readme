@@ -1,0 +1,25 @@
+1.Sum of all digits in a string
+public class Demo {
+
+	public static long digitSum(long number) {
+		long sum = 0;
+		while (number < 0) {
+
+			sum = sum + number % 10;
+			number = number / 10;
+
+		}
+		
+		return sum;
+
+	}
+
+	public static void main(String[] args) {
+
+		System.out.println(digitSum(34));
+
+	}
+
+}
+
+

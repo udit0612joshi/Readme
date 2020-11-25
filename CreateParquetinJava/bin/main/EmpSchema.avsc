@@ -1,0 +1,40 @@
+{
+ "type": "record",
+ "name": "empRecords",
+ "doc": "Employee Records",
+ "fields": 
+  [{
+   "name": "id", 
+   "type": "int"
+   
+  }, 
+  {
+   "name": "Name",
+   "type": "string"
+  },
+  {
+   "name": "Dept",
+   "type": "string"
+  }
+  {
+   "name": "Address",
+   "type": "string1"
+  }
+  {
+   "name": "Salary",
+   "type": "string2"
+  }
+  {
+   "name": "Expenditure",
+   "type": "string3"
+  }
+  {
+   "name": "Hobbies",
+   "type": "string4"
+  }
+  {
+   "name": "LastName",
+   "type": "string5"
+  }
+ ]
+}
